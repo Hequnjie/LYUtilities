@@ -45,6 +45,7 @@
 		2D6611381D4F161500C3AF86 /* NSData+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LYUtilities.m"; sourceTree = "<group>"; };
 		2D66113C1D4F1AB600C3AF86 /* LYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYLogger.h; sourceTree = "<group>"; };
 		2D66113D1D4F1AB600C3AF86 /* LYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYLogger.m; sourceTree = "<group>"; };
+		2D6611411D4F1F2100C3AF86 /* LYMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYMacros.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 		2D6611161D4EF2BD00C3AF86 /* LYUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				2D6611401D4F1DDB00C3AF86 /* Macros */,
 				2D66113B1D4F1A8100C3AF86 /* Log */,
 				2D66112E1D4F138A00C3AF86 /* Categorys */,
 				2D6611171D4EF2BD00C3AF86 /* LYUtilities.h */,
@@ -124,6 +126,14 @@
 				2D66113D1D4F1AB600C3AF86 /* LYLogger.m */,
 			);
 			name = Log;
+			sourceTree = "<group>";
+		};
+		2D6611401D4F1DDB00C3AF86 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				2D6611411D4F1F2100C3AF86 /* LYMacros.h */,
+			);
+			name = Macros;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
