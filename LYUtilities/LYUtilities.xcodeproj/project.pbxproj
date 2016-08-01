@@ -10,6 +10,8 @@
 		2D6611181D4EF2BD00C3AF86 /* LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D6611171D4EF2BD00C3AF86 /* LYUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D66111F1D4EF2BD00C3AF86 /* LYUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6611141D4EF2BD00C3AF86 /* LYUtilities.framework */; };
 		2D6611241D4EF2BD00C3AF86 /* LYUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6611231D4EF2BD00C3AF86 /* LYUtilitiesTests.m */; };
+		2D6611311D4F13F900C3AF86 /* NSObject+LYJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D66112F1D4F13F900C3AF86 /* NSObject+LYJSON.h */; };
+		2D6611321D4F13F900C3AF86 /* NSObject+LYJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6611301D4F13F900C3AF86 /* NSObject+LYJSON.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		2D66111E1D4EF2BD00C3AF86 /* LYUtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LYUtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6611231D4EF2BD00C3AF86 /* LYUtilitiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYUtilitiesTests.m; sourceTree = "<group>"; };
 		2D6611251D4EF2BD00C3AF86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D66112F1D4F13F900C3AF86 /* NSObject+LYJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+LYJSON.h"; sourceTree = "<group>"; };
+		2D6611301D4F13F900C3AF86 /* NSObject+LYJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+LYJSON.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		2D6611161D4EF2BD00C3AF86 /* LYUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				2D66112E1D4F138A00C3AF86 /* Categorys */,
 				2D6611171D4EF2BD00C3AF86 /* LYUtilities.h */,
 				2D6611191D4EF2BD00C3AF86 /* Info.plist */,
 			);
@@ -86,6 +91,15 @@
 			path = LYUtilitiesTests;
 			sourceTree = "<group>";
 		};
+		2D66112E1D4F138A00C3AF86 /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				2D66112F1D4F13F900C3AF86 /* NSObject+LYJSON.h */,
+				2D6611301D4F13F900C3AF86 /* NSObject+LYJSON.m */,
+			);
+			name = Categorys;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -94,6 +108,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6611181D4EF2BD00C3AF86 /* LYUtilities.h in Headers */,
+				2D6611311D4F13F900C3AF86 /* NSObject+LYJSON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D6611321D4F13F900C3AF86 /* NSObject+LYJSON.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +392,7 @@
 				2D66112A1D4EF2BD00C3AF86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2D66112B1D4EF2BD00C3AF86 /* Build configuration list for PBXNativeTarget "LYUtilitiesTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +401,7 @@
 				2D66112D1D4EF2BD00C3AF86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
