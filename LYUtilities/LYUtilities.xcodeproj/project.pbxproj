@@ -16,6 +16,8 @@
 		2D6611361D4F160900C3AF86 /* NSString+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6611341D4F160900C3AF86 /* NSString+LYUtilities.m */; };
 		2D6611391D4F161500C3AF86 /* NSData+LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D6611371D4F161500C3AF86 /* NSData+LYUtilities.h */; };
 		2D66113A1D4F161500C3AF86 /* NSData+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6611381D4F161500C3AF86 /* NSData+LYUtilities.m */; };
+		2D66113E1D4F1AB600C3AF86 /* LYLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D66113C1D4F1AB600C3AF86 /* LYLogger.h */; };
+		2D66113F1D4F1AB600C3AF86 /* LYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D66113D1D4F1AB600C3AF86 /* LYLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		2D6611341D4F160900C3AF86 /* NSString+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+LYUtilities.m"; sourceTree = "<group>"; };
 		2D6611371D4F161500C3AF86 /* NSData+LYUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+LYUtilities.h"; sourceTree = "<group>"; };
 		2D6611381D4F161500C3AF86 /* NSData+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+LYUtilities.m"; sourceTree = "<group>"; };
+		2D66113C1D4F1AB600C3AF86 /* LYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LYLogger.h; sourceTree = "<group>"; };
+		2D66113D1D4F1AB600C3AF86 /* LYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LYLogger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 		2D6611161D4EF2BD00C3AF86 /* LYUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				2D66113B1D4F1A8100C3AF86 /* Log */,
 				2D66112E1D4F138A00C3AF86 /* Categorys */,
 				2D6611171D4EF2BD00C3AF86 /* LYUtilities.h */,
 				2D6611191D4EF2BD00C3AF86 /* Info.plist */,
@@ -112,6 +117,15 @@
 			name = Categorys;
 			sourceTree = "<group>";
 		};
+		2D66113B1D4F1A8100C3AF86 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				2D66113C1D4F1AB600C3AF86 /* LYLogger.h */,
+				2D66113D1D4F1AB600C3AF86 /* LYLogger.m */,
+			);
+			name = Log;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -122,6 +136,7 @@
 				2D6611351D4F160900C3AF86 /* NSString+LYUtilities.h in Headers */,
 				2D6611391D4F161500C3AF86 /* NSData+LYUtilities.h in Headers */,
 				2D6611181D4EF2BD00C3AF86 /* LYUtilities.h in Headers */,
+				2D66113E1D4F1AB600C3AF86 /* LYLogger.h in Headers */,
 				2D6611311D4F13F900C3AF86 /* NSObject+LYJSON.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +239,7 @@
 			files = (
 				2D6611321D4F13F900C3AF86 /* NSObject+LYJSON.m in Sources */,
 				2D6611361D4F160900C3AF86 /* NSString+LYUtilities.m in Sources */,
+				2D66113F1D4F1AB600C3AF86 /* LYLogger.m in Sources */,
 				2D66113A1D4F161500C3AF86 /* NSData+LYUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
