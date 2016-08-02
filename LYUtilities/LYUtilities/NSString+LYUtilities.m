@@ -18,6 +18,7 @@
     return data.ly_md5;
 }
 
+
 #pragma mark - Base64
 
 - (nullable NSData *)ly_base64EncodedData {
@@ -34,6 +35,23 @@
 
 - (nullable NSString *)ly_base64DecodedString {
     return [self dataUsingEncoding:NSUTF8StringEncoding].ly_base64DecodedString;
+}
+
+
+#pragma mark - URL Encoding
+
+- (nullable NSString *)ly_addingPercentEncoding {
+    return [self stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    /*
+     [self stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]
+     */
+}
+
+- (nullable NSString *)ly_removingPercentEncoding {
+    return [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    /*
+     self.stringByRemovingPercentEncoding
+     */
 }
 
 @end

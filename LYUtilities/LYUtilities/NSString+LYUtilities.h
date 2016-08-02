@@ -14,11 +14,19 @@
 
 - (nullable NSString *)ly_md5;
 
+
 #pragma mark - Base64
 
 - (nullable NSData *)ly_base64EncodedData;
 - (nullable NSString *)ly_base64EncodedString;
 - (nullable NSData *)ly_base64DecodedData;
 - (nullable NSString *)ly_base64DecodedString;
+
+
+#pragma mark - URL Encoding
+
+- (nullable NSString *)ly_addingPercentEncoding;
+- (nullable NSString *)ly_removingPercentEncoding;
+
 
 @end
