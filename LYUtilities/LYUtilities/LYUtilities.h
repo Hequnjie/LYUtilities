@@ -23,3 +23,4 @@ FOUNDATION_EXPORT const unsigned char LYUtilitiesVersionString[];
 #import <LYUtilities/NSObject+LYJSON.h>
 #import <LYUtilities/NSString+LYUtilities.h>
 #import <LYUtilities/NSData+LYUtilities.h>
+#import <LYUtilities/NSURL+LYUtilities.h>

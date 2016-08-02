@@ -29,4 +29,9 @@
 - (nullable NSString *)ly_removingPercentEncoding;
 
 
+#pragma mark - URL Query Components
+
+- (nullable NSDictionary *)ly_urlQueryComponents;
+
+
 @end

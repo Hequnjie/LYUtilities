@@ -54,4 +54,33 @@
      */
 }
 
+#pragma mark - URL Query Components
+
+- (nullable NSDictionary *)ly_urlQueryComponents {
+    
+    NSArray *pairs = [self.ly_removingPercentEncoding componentsSeparatedByString:@"&"];
+    if (pairs.count == 0) {
+        return nil;
+    }
+    
+    NSMutableDictionary *decoded = NSMutableDictionary.new;
+    
+    for (NSString *queryString in pairs) {
+        NSArray<NSString *> *parts = [queryString componentsSeparatedByString:@"="];
+        if (parts.count == 1) {
+            decoded[parts[0]] = @"";
+        } else if (parts.count == 2) {
+            decoded[parts[0]] = parts[1];
+        } else if (parts.count > 2) {
+            NSRange range = [queryString rangeOfString:@"="];
+            if (range.location != NSNotFound) {
+                decoded[parts[0]] = [queryString substringFromIndex:range.location + 1] ?: @"";
+            }
+        }
+    }
+    
+    return decoded;
+}
+
+
 @end
