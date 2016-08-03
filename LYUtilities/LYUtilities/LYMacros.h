@@ -163,6 +163,11 @@ do { \
 #define kPathCache          [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
 
 
+#pragma mark - object key path
+
+#define LYKeyPath(objc,keyPath)   (((void)objc.keyPath, #keyPath))
+
+
 
 #endif /* LYMacros_h */
 
