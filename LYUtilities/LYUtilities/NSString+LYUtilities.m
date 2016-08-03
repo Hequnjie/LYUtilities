@@ -54,6 +54,7 @@
      */
 }
 
+
 #pragma mark - URL Query Components
 
 - (nullable NSDictionary *)ly_urlQueryComponents {
@@ -83,4 +84,17 @@
 }
 
 
+#pragma mark - Predicate evaluate
+
+- (BOOL)ly_isMailBox {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:self];
+}
+
+- (BOOL)ly_isMobilePhoneNumber {
+    NSString *mobileRegex = @"^[0-9]{3,4}-[0-9]{3,8}$)|(^[0-9]{3,8}$)|(^([0-9]{3,4})[0-9]{3,8}$)|(^0{0,1}13[0-9]{9}$";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", mobileRegex];
+    return [emailTest evaluateWithObject:self];
+}
 @end

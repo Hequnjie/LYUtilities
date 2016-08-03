@@ -22,6 +22,8 @@
 		2D6611451D5070BF00C3AF86 /* NSURL+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6611431D5070BF00C3AF86 /* NSURL+LYUtilities.m */; };
 		2D8B31051D51CF7D00B2F8CF /* UIView+LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8B31031D51CF7D00B2F8CF /* UIView+LYUtilities.h */; };
 		2D8B31061D51CF7D00B2F8CF /* UIView+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B31041D51CF7D00B2F8CF /* UIView+LYUtilities.m */; };
+		2DB3806A1D51EA2A00B21912 /* NSNumber+LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DB380681D51EA2A00B21912 /* NSNumber+LYUtilities.h */; };
+		2DB3806B1D51EA2A00B21912 /* NSNumber+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB380691D51EA2A00B21912 /* NSNumber+LYUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		2D6611431D5070BF00C3AF86 /* NSURL+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+LYUtilities.m"; sourceTree = "<group>"; };
 		2D8B31031D51CF7D00B2F8CF /* UIView+LYUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LYUtilities.h"; sourceTree = "<group>"; };
 		2D8B31041D51CF7D00B2F8CF /* UIView+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LYUtilities.m"; sourceTree = "<group>"; };
+		2DB380681D51EA2A00B21912 /* NSNumber+LYUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+LYUtilities.h"; sourceTree = "<group>"; };
+		2DB380691D51EA2A00B21912 /* NSNumber+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+LYUtilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				2D6611301D4F13F900C3AF86 /* NSObject+LYJSON.m */,
 				2D6611331D4F160900C3AF86 /* NSString+LYUtilities.h */,
 				2D6611341D4F160900C3AF86 /* NSString+LYUtilities.m */,
+				2DB380681D51EA2A00B21912 /* NSNumber+LYUtilities.h */,
+				2DB380691D51EA2A00B21912 /* NSNumber+LYUtilities.m */,
 				2D6611371D4F161500C3AF86 /* NSData+LYUtilities.h */,
 				2D6611381D4F161500C3AF86 /* NSData+LYUtilities.m */,
 				2D6611421D5070BF00C3AF86 /* NSURL+LYUtilities.h */,
@@ -157,6 +163,7 @@
 			files = (
 				2D6611351D4F160900C3AF86 /* NSString+LYUtilities.h in Headers */,
 				2D6611441D5070BF00C3AF86 /* NSURL+LYUtilities.h in Headers */,
+				2DB3806A1D51EA2A00B21912 /* NSNumber+LYUtilities.h in Headers */,
 				2D6611391D4F161500C3AF86 /* NSData+LYUtilities.h in Headers */,
 				2D6611181D4EF2BD00C3AF86 /* LYUtilities.h in Headers */,
 				2D66113E1D4F1AB600C3AF86 /* LYLogger.h in Headers */,
@@ -261,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DB3806B1D51EA2A00B21912 /* NSNumber+LYUtilities.m in Sources */,
 				2D6611321D4F13F900C3AF86 /* NSObject+LYJSON.m in Sources */,
 				2D6611361D4F160900C3AF86 /* NSString+LYUtilities.m in Sources */,
 				2D8B31061D51CF7D00B2F8CF /* UIView+LYUtilities.m in Sources */,

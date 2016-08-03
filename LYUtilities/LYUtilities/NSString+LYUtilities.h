@@ -34,4 +34,10 @@
 - (nullable NSDictionary *)ly_urlQueryComponents;
 
 
+#pragma mark - Predicate evaluate
+
+- (BOOL)ly_isMailBox;
+- (BOOL)ly_isMobilePhoneNumber;
+
+
 @end
