@@ -40,4 +40,8 @@
 - (BOOL)ly_isMobilePhoneNumber;
 
 
+#pragma mark - filter emoji
+
+- (nullable NSString *)ly_filterEmojiString;
+
 @end

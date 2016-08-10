@@ -97,4 +97,102 @@
     NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", mobileRegex];
     return [emailTest evaluateWithObject:self];
 }
+
+
+#pragma mark - filter emoji
+
+/*
++ (NSString *)regularExpressionFilterEmoji:(NSString *)string {
+    NSString *str = @"";
+    str = @"[\\ud83c\\udc00-\\ud83c\\udfff]|[\\ud83d\\udc00-\\ud83d\\udfff]|[\\u2600-\\ufeef]";
+    str = @"[\\ud800\\udc00-\\udbff\\udfff\\ud800-\\udfff]|[\\u0000-\\u27B0]";
+    
+    NSRegularExpression *regularExpression = [NSRegularExpression regularExpressionWithPattern:str
+                                                                                       options:0
+                                                                                         error:nil];
+    return [regularExpression stringByReplacingMatchesInString:string
+                                                       options:0
+                                                         range:NSMakeRange(0, string.length)
+                                                  withTemplate:@""];
+}
+ */
+
+/*
+ 
+ 1. Emoticons ( 1F601 - 1F64F )
+ D83D DE01
+ D83D DE4F
+ 
+ 2. Dingbats ( 2702 - 27B0 )
+ 2702
+ 27B0
+ 
+ 3. Transport and map symbols ( 1F680 - 1F6C0 )
+ D83D DE80
+ D83D DEC0
+ 
+ 4. Enclosed characters ( 24C2 - 1F251 )
+ 24C2
+ D83C DD70
+ D83C DE51
+ 
+ 5. Uncategorized
+ 0001 20E3
+ 00A9
+ 2049
+ 
+ D83C DC04
+ D83D DDFF
+ 
+ 6a. Additional emoticons ( 1F600 - 1F636 )
+ D83D DE00
+ D83D DE36
+ 
+ 6b. Additional transport and map symbols ( 1F681 - 1F6C5 )
+ D83D DE81
+ D83D DEC5
+ 
+ 6c. Other additional symbols ( 1F30D - 1F567 )
+ D83C DF0D
+ D83D DD67
+ */
+
+- (nullable NSString *)ly_filterEmojiString {
+    NSUInteger len = [self lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
+    const char *utf8 = [self UTF8String];
+    char *newUTF8 = malloc(sizeof(char) * len);
+    int j = 0;
+    
+    for (int i = 0; i < len; i++) {
+        unsigned int c = *(utf8 + i);
+        
+        BOOL isControlChar = NO;
+        if (c == 0xFFFFFFF0 ||
+            (c >= 0xFFFFFF30 && c <= 0xFFFFFF39)) {
+            i = i + 3;
+            isControlChar = YES;
+        }
+        
+        if (c == 0xFFFFFFE2 || c == 0xFFFFFFE3) {
+            i = i + 2;
+            isControlChar = YES;
+        }
+        
+        if (c == 0xFFFFFFC2) {
+            i = i + 1;
+            isControlChar = YES;
+        }
+        
+        if (!isControlChar) {
+            newUTF8[j++] = *(utf8 + i);
+        }
+    }
+    newUTF8[j] = '\0';
+    NSString *encrypted = [NSString stringWithCString:(const char*)newUTF8 encoding:NSUTF8StringEncoding];
+    free(newUTF8);
+    return encrypted;
+}
+
+
+
 @end
