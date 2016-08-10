@@ -46,4 +46,10 @@
     return [[NSString alloc] initWithData:self.ly_base64DecodedData encoding:NSUTF8StringEncoding];
 }
 
+#pragma mark - String Value
+
+- (nullable NSString *)ly_utf8StringValue {
+    return [[NSString alloc] initWithData:self encoding:NSUTF8StringEncoding];
+}
+
 @end

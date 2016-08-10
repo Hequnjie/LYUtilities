@@ -21,4 +21,8 @@
 - (nullable NSData *)ly_base64DecodedData;
 - (nullable NSString *)ly_base64DecodedString;
 
+#pragma mark - String Value
+
+- (nullable NSString *)ly_utf8StringValue;
+
 @end
