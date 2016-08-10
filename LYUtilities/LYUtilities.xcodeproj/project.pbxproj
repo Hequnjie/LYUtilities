@@ -22,6 +22,8 @@
 		2D6611451D5070BF00C3AF86 /* NSURL+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6611431D5070BF00C3AF86 /* NSURL+LYUtilities.m */; };
 		2D8B31051D51CF7D00B2F8CF /* UIView+LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D8B31031D51CF7D00B2F8CF /* UIView+LYUtilities.h */; };
 		2D8B31061D51CF7D00B2F8CF /* UIView+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8B31041D51CF7D00B2F8CF /* UIView+LYUtilities.m */; };
+		2DA0B0061D5B17D400F38F55 /* UIImage+LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DA0B0041D5B17D400F38F55 /* UIImage+LYUtilities.h */; };
+		2DA0B0071D5B17D400F38F55 /* UIImage+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DA0B0051D5B17D400F38F55 /* UIImage+LYUtilities.m */; };
 		2DB3806A1D51EA2A00B21912 /* NSNumber+LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DB380681D51EA2A00B21912 /* NSNumber+LYUtilities.h */; };
 		2DB3806B1D51EA2A00B21912 /* NSNumber+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DB380691D51EA2A00B21912 /* NSNumber+LYUtilities.m */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		2D6611431D5070BF00C3AF86 /* NSURL+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+LYUtilities.m"; sourceTree = "<group>"; };
 		2D8B31031D51CF7D00B2F8CF /* UIView+LYUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+LYUtilities.h"; sourceTree = "<group>"; };
 		2D8B31041D51CF7D00B2F8CF /* UIView+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+LYUtilities.m"; sourceTree = "<group>"; };
+		2DA0B0041D5B17D400F38F55 /* UIImage+LYUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+LYUtilities.h"; sourceTree = "<group>"; };
+		2DA0B0051D5B17D400F38F55 /* UIImage+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+LYUtilities.m"; sourceTree = "<group>"; };
 		2DB380681D51EA2A00B21912 /* NSNumber+LYUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+LYUtilities.h"; sourceTree = "<group>"; };
 		2DB380691D51EA2A00B21912 /* NSNumber+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+LYUtilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -133,6 +137,8 @@
 				2D6611431D5070BF00C3AF86 /* NSURL+LYUtilities.m */,
 				2D8B31031D51CF7D00B2F8CF /* UIView+LYUtilities.h */,
 				2D8B31041D51CF7D00B2F8CF /* UIView+LYUtilities.m */,
+				2DA0B0041D5B17D400F38F55 /* UIImage+LYUtilities.h */,
+				2DA0B0051D5B17D400F38F55 /* UIImage+LYUtilities.m */,
 			);
 			name = Categorys;
 			sourceTree = "<group>";
@@ -169,6 +175,7 @@
 				2D66113E1D4F1AB600C3AF86 /* LYLogger.h in Headers */,
 				2D6611311D4F13F900C3AF86 /* NSObject+LYJSON.h in Headers */,
 				2D8B31051D51CF7D00B2F8CF /* UIView+LYUtilities.h in Headers */,
+				2DA0B0061D5B17D400F38F55 /* UIImage+LYUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +280,7 @@
 				2D6611361D4F160900C3AF86 /* NSString+LYUtilities.m in Sources */,
 				2D8B31061D51CF7D00B2F8CF /* UIView+LYUtilities.m in Sources */,
 				2D66113F1D4F1AB600C3AF86 /* LYLogger.m in Sources */,
+				2DA0B0071D5B17D400F38F55 /* UIImage+LYUtilities.m in Sources */,
 				2D6611451D5070BF00C3AF86 /* NSURL+LYUtilities.m in Sources */,
 				2D66113A1D4F161500C3AF86 /* NSData+LYUtilities.m in Sources */,
 			);
