@@ -10,19 +10,19 @@
 
 @interface UIAlertView (LYUtilities)
 
-+ (nonnull UIAlertView *)ly_showRemingAlertMessage:(nonnull NSString *)message buttonTitle:(nonnull NSString *)buttonTitle;
-+ (nonnull UIAlertView *)ly_showRemingAlertTitle:(nullable NSString *)title message:(nullable NSString *)message buttonTitle:(nonnull NSString *)buttonTitle;
++ (void)setDefaultButtonTitle:(nonnull NSString *)title;
 
-+ (nonnull UIAlertView *)ly_showAlertWithTitle:(nullable NSString *)title message:(nonnull NSString *)message cancelButtonTitle:(nullable NSString *)cancelButtonTitle otherButtonTitles:(nullable NSArray<NSString *> *)otherButtonTitles;
++ (nonnull UIAlertView *)ly_showMessage:(nonnull NSString *)message;
++ (nonnull UIAlertView *)ly_showMessage:(nonnull NSString *)message handler:(void (^__nullable)(UIAlertView * __nonnull alertView, NSInteger buttonIndex))block;
 
-@property (nonatomic, copy, nullable) void (^ly_clickedButtonAtIndexBlock)(NSInteger buttonIndex);
++ (nonnull UIAlertView *)ly_showMessage:(nonnull NSString *)message buttonTitle:(nonnull NSString *)buttonTitle;
++ (nonnull UIAlertView *)ly_showMessage:(nonnull NSString *)message buttonTitle:(nonnull NSString *)buttonTitle handler:(void (^__nullable)(UIAlertView * __nonnull alertView, NSInteger buttonIndex))block;
+
++ (nonnull UIAlertView *)ly_showTitle:(nullable NSString *)title message:(nullable NSString *)message buttonTitle:(nonnull NSString *)buttonTitle;
++ (nonnull UIAlertView *)ly_showTitle:(nullable NSString *)title message:(nullable NSString *)message buttonTitle:(nonnull NSString *)buttonTitle handler:(void (^__nullable)(UIAlertView * __nonnull alertView, NSInteger buttonIndex))block;
+
++ (nonnull UIAlertView *)ly_showTitle:(nullable NSString *)title message:(nonnull NSString *)message cancelButtonTitle:(nullable NSString *)cancelButtonTitle otherButtonTitles:(nullable NSArray<NSString *> *)otherButtonTitles handler:(void (^__nullable)(UIAlertView * __nonnull alertView, NSInteger buttonIndex))block;
+
+@property (nonatomic, copy, nullable) void (^ly_clickedButtonAtIndexBlock)(UIAlertView * __nonnull alertView, NSInteger buttonIndex);
 
 @end
-
-
-UIAlertView * _Nonnull ly_showAlertMessage (NSString * _Nonnull message);
-UIAlertView * _Nonnull ly_showAlert (NSString * _Nullable title,
-                                     NSString * _Nonnull message,
-                                     id /*<UIAlertViewDelegate>*/ _Nullable delegate,
-                                     NSString * _Nullable cancelButtonTitle,
-                                     NSArray<NSString *> * _Nullable otherButtonTitles);
