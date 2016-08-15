@@ -20,6 +20,9 @@ FOUNDATION_EXPORT const unsigned char LYUtilitiesVersionString[];
 
 #import <LYUtilities/LYMacros.h>
 
+#import <LYUtilities/LYReachability.h>
+#import <LYUtilities/LYLogger.h>
+
 #import <LYUtilities/NSObject+LYJSON.h>
 #import <LYUtilities/NSString+LYUtilities.h>
 #import <LYUtilities/NSNumber+LYUtilities.h>
