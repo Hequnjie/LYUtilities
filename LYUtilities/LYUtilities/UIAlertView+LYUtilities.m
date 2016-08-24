@@ -87,7 +87,7 @@ static NSString *ly_defaultButtonTitle = @"ok";
     }
 }
 
-- (void (^)(NSInteger))ly_clickedButtonAtIndexBlock {
+- (void (^)(UIAlertView * _Nonnull, NSInteger))ly_clickedButtonAtIndexBlock {
     return objc_getAssociatedObject(self, &kLY_ClickedButtonAtIndexBlockKeyIdentifier);
 }
 

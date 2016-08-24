@@ -48,9 +48,7 @@
 
 #define testcase (kSCNetworkReachabilityFlagsConnectionRequired | kSCNetworkReachabilityFlagsTransientConnection)
 
-- (BOOL)isReachableWithFlags:(SCNetworkReachabilityFlags)flags {
-    BOOL connectionUP = YES;
-    
+- (BOOL)isReachableWithFlags:(SCNetworkReachabilityFlags)flags {    
     if (!(flags & kSCNetworkReachabilityFlagsReachable))
         return NO;
     
