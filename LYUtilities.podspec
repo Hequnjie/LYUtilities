@@ -10,8 +10,8 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.source              = { :git => "https://github.com/Hequnjie/LYUtilities.git", :branch => "master" }
-#s.source              = { :git => "https://github.com/Hequnjie/LYUtilities.git", :tag => "#{s.version}" }
+#s.source              = { :git => "https://github.com/Hequnjie/LYUtilities.git", :branch => "master" }
+  s.source              = { :git => "https://github.com/Hequnjie/LYUtilities.git", :tag => "#{s.version}" }
   s.public_header_files = 'LYUtilities/LYUtilities/**/*.h'
   s.source_files        = "Classes", "LYUtilities/LYUtilities/**/*.{h,m}"
   s.exclude_files       = "LYUtilities/LYUtilities/**/*.plist"
