@@ -158,9 +158,10 @@ do { \
 
 #pragma mark - paths
 
-#define kPathTemp           NSTemporaryDirectory()
 #define kPathDocument       [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]
+#define kPathLibrary        [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) firstObject]
 #define kPathCache          [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) firstObject]
+#define kPathTemp           NSTemporaryDirectory()
 
 
 #pragma mark - object key path

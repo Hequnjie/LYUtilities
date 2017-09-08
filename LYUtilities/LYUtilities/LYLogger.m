@@ -31,10 +31,10 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _filePath = [self defaultLogsDirectory];
-        self.logsDirectory = [self defaultLogsDirectory];
+        _filePath = [self _defaultLogsDirectory];
+        self.logsDirectory = [self _defaultLogsDirectory];
         
-        _workQueue = dispatch_queue_create([@"LYLogger work queue" UTF8String], DISPATCH_QUEUE_SERIAL);
+        self.workQueue = dispatch_queue_create([@"LYLogger work queue" UTF8String], DISPATCH_QUEUE_SERIAL);
         
         _dateFormatter = [[NSDateFormatter alloc] init];
         [_dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4]; // 10.4+ style
@@ -46,7 +46,7 @@
 #pragma mark - save logs
 
 - (void)logMessage:(nonnull NSString *)message {
-    dispatch_async(_workQueue, ^{
+    dispatch_async(self.workQueue, ^{
         [self _logMessage:message];
     });
 }
@@ -58,7 +58,7 @@
         va_start(args, format);
         
         NSString *message = [[NSString alloc] initWithFormat:format arguments:args];
-        dispatch_async(_workQueue, ^{
+        dispatch_async(self.workQueue, ^{
             [self _logMessage:message];
         });
         
@@ -67,12 +67,12 @@
 }
 
 - (void)_logMessage:(nonnull NSString *)message {
-    //must work in workQueue
+    //must work in self.workQueue
     
-    NSString *nowLogFilePath = [self nowLogFilePath];
-    if (_currentFilePath == nil || ![_currentFilePath isEqualToString:nowLogFilePath]) {
+    NSString *_nowLogFilePath = [self _nowLogFilePath];
+    if (_currentFilePath == nil || ![_currentFilePath isEqualToString:_nowLogFilePath]) {
         _currentFileHandle = nil;
-        _currentFilePath = nowLogFilePath;
+        _currentFilePath = _nowLogFilePath;
     }
     
     if (![message hasSuffix:@"\n"]) {
@@ -103,15 +103,15 @@
     return _currentFileHandle;
 }
 
-- (NSString *)defaultLogsDirectory {
+- (NSString *)_defaultLogsDirectory {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString *baseDir = paths.firstObject;
     NSString *logsDirectory = [baseDir stringByAppendingPathComponent:@"LYLogs"];
     return logsDirectory;
 }
 
-- (NSString *)nowLogFilePath {
-    return [NSString stringWithFormat:@"%@/%@", self.logsDirectory, self.nowLogFileName];
+- (NSString *)_nowLogFilePath {
+    return [NSString stringWithFormat:@"%@/%@", self.logsDirectory, self._nowLogFileName];
 }
 
 - (NSString *)logsDirectory {
@@ -128,17 +128,17 @@
     return _logsDirectory;
 }
 
-- (NSString *)nowLogFileName {
-    NSDateFormatter *dateFormatter = self.logFileDateFormatter;
+- (NSString *)_nowLogFileName {
+    NSDateFormatter *dateFormatter = self._logFileDateFormatter;
     NSString *formattedDate = [dateFormatter stringFromDate:NSDate.date];
     
     return [NSString stringWithFormat:@"%@.log", formattedDate];
 }
 
-- (NSDateFormatter *)logFileDateFormatter {
+- (NSDateFormatter *)_logFileDateFormatter {
     NSMutableDictionary *dictionary = [[NSThread currentThread] threadDictionary];
     NSString *dateFormat = @"yyyy'-'MM'-'dd'";
-    NSString *key = [NSString stringWithFormat:@"logFileDateFormatter.%@", dateFormat];
+    NSString *key = [NSString stringWithFormat:@"_logFileDateFormatter.%@", dateFormat];
     NSDateFormatter *dateFormatter = dictionary[key];
     
     if (dateFormatter == nil) {

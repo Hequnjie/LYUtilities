@@ -14,4 +14,6 @@
 
 - (null_unspecified UIImage *)ly_imageWithTintColor:(nonnull UIColor *)color;
 
++ (nullable UIImage *)ly_createQRForString:(nonnull NSString *)qrString imageSize:(CGFloat)size;
+
 @end
