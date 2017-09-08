@@ -31,4 +31,5 @@ FOUNDATION_EXPORT const unsigned char LYUtilitiesVersionString[];
 #import <LYUtilities/UIView+LYUtilities.h>
 #import <LYUtilities/UIImage+LYUtilities.h>
 #import <LYUtilities/UIAlertView+LYUtilities.h>
+#import <LYUtilities/UIAlertController+LYUtilities.h>
 #import <LYUtilities/UIControl+LYUtilities.h>

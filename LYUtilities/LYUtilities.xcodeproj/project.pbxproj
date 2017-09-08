@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21326CD91F627F7700C65473 /* UIAlertController+LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 21326CD71F627F7700C65473 /* UIAlertController+LYUtilities.h */; };
+		21326CDA1F627F7700C65473 /* UIAlertController+LYUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 21326CD81F627F7700C65473 /* UIAlertController+LYUtilities.m */; };
 		2D6611181D4EF2BD00C3AF86 /* LYUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D6611171D4EF2BD00C3AF86 /* LYUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D66111F1D4EF2BD00C3AF86 /* LYUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D6611141D4EF2BD00C3AF86 /* LYUtilities.framework */; };
 		2D6611241D4EF2BD00C3AF86 /* LYUtilitiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6611231D4EF2BD00C3AF86 /* LYUtilitiesTests.m */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21326CD71F627F7700C65473 /* UIAlertController+LYUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+LYUtilities.h"; sourceTree = "<group>"; };
+		21326CD81F627F7700C65473 /* UIAlertController+LYUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+LYUtilities.m"; sourceTree = "<group>"; };
 		2D6611141D4EF2BD00C3AF86 /* LYUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LYUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D6611171D4EF2BD00C3AF86 /* LYUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYUtilities.h; sourceTree = "<group>"; };
 		2D6611191D4EF2BD00C3AF86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				2DA0B0051D5B17D400F38F55 /* UIImage+LYUtilities.m */,
 				2DEFBA051D5C606F0018B601 /* UIAlertView+LYUtilities.h */,
 				2DEFBA061D5C606F0018B601 /* UIAlertView+LYUtilities.m */,
+				21326CD71F627F7700C65473 /* UIAlertController+LYUtilities.h */,
+				21326CD81F627F7700C65473 /* UIAlertController+LYUtilities.m */,
 				2DEFBA091D5D6DA30018B601 /* UIControl+LYUtilities.h */,
 				2DEFBA0A1D5D6DA30018B601 /* UIControl+LYUtilities.m */,
 			);
@@ -197,6 +203,7 @@
 				2D6611441D5070BF00C3AF86 /* NSURL+LYUtilities.h in Headers */,
 				2DB3806A1D51EA2A00B21912 /* NSNumber+LYUtilities.h in Headers */,
 				2D6611391D4F161500C3AF86 /* NSData+LYUtilities.h in Headers */,
+				21326CD91F627F7700C65473 /* UIAlertController+LYUtilities.h in Headers */,
 				2DEFBA071D5C606F0018B601 /* UIAlertView+LYUtilities.h in Headers */,
 				2D6611181D4EF2BD00C3AF86 /* LYUtilities.h in Headers */,
 				2D66113E1D4F1AB600C3AF86 /* LYLogger.h in Headers */,
@@ -308,6 +315,7 @@
 				2DBEEA1F1D616A0C0071DA42 /* LYReachability.m in Sources */,
 				2D6611321D4F13F900C3AF86 /* NSObject+LYJSON.m in Sources */,
 				2D6611361D4F160900C3AF86 /* NSString+LYUtilities.m in Sources */,
+				21326CDA1F627F7700C65473 /* UIAlertController+LYUtilities.m in Sources */,
 				2D8B31061D51CF7D00B2F8CF /* UIView+LYUtilities.m in Sources */,
 				2D66113F1D4F1AB600C3AF86 /* LYLogger.m in Sources */,
 				2DEFBA0C1D5D6DA30018B601 /* UIControl+LYUtilities.m in Sources */,
