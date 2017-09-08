@@ -160,7 +160,7 @@
 - (nullable NSString *)ly_filterEmojiString {
     NSUInteger len = [self lengthOfBytesUsingEncoding:NSUTF8StringEncoding];
     const char *utf8 = [self UTF8String];
-    char *newUTF8 = malloc(sizeof(char) * len);
+    char *newUTF8 = malloc(sizeof(char) * len + 1);
     int j = 0;
     
     for (int i = 0; i < len; i++) {

@@ -12,6 +12,8 @@
 #import <netinet/in.h>
 #import <sys/socket.h>
 
+NSString *kLYReachabilityChangedNotification = @"kNetworkLYReachabilityChangedNotification";
+
 @interface LYReachability ()
 
 @property (nonatomic, assign) SCNetworkReachabilityRef  reachabilityRef;
@@ -48,7 +50,7 @@
 
 #define testcase (kSCNetworkReachabilityFlagsConnectionRequired | kSCNetworkReachabilityFlagsTransientConnection)
 
-- (BOOL)isReachableWithFlags:(SCNetworkReachabilityFlags)flags {    
+- (BOOL)isReachableWithFlags:(SCNetworkReachabilityFlags)flags {
     if (!(flags & kSCNetworkReachabilityFlagsReachable))
         return NO;
     
@@ -57,7 +59,7 @@
     
 #if	TARGET_OS_IPHONE
     if (flags & kSCNetworkReachabilityFlagsIsWWAN)
-        return NO;
+        return YES;
 #endif
     
     return YES;
@@ -105,6 +107,40 @@
     }
     
     return NO;
+}
+
+static void ReachabilityCallback(SCNetworkReachabilityRef target, SCNetworkReachabilityFlags flags, void* info) {
+#pragma unused (target, flags)
+    NSCAssert(info != NULL, @"info was NULL in ReachabilityCallback");
+    NSCAssert([(__bridge NSObject*) info isKindOfClass: [LYReachability class]], @"info was wrong class in ReachabilityCallback");
+    
+    LYReachability* noteObject = (__bridge LYReachability *)info;
+    // Post a notification to notify the client that the network reachability changed.
+    [[NSNotificationCenter defaultCenter] postNotificationName: kLYReachabilityChangedNotification object: noteObject];
+}
+
+- (BOOL)startNotifier {
+    BOOL returnValue = NO;
+    SCNetworkReachabilityContext    context = { 0, NULL, NULL, NULL, NULL };
+    context.info = (__bridge void *)self;
+    
+    if (SCNetworkReachabilitySetCallback(_reachabilityRef, ReachabilityCallback, &context))
+    {
+        if (SCNetworkReachabilityScheduleWithRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode))
+        {
+            returnValue = YES;
+        }
+    }
+    
+    return returnValue;
+}
+
+- (void)stopNotifier
+{
+    if (_reachabilityRef != NULL)
+    {
+        SCNetworkReachabilityUnscheduleFromRunLoop(_reachabilityRef, CFRunLoopGetCurrent(), kCFRunLoopDefaultMode);
+    }
 }
 
 
